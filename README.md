@@ -2,7 +2,7 @@
 
 **WARNING: This project is experimental and work-in-progress, use at your own risk!**
 
-![Build & Test (Core)](https://github.com/spacecomputerio/seedselection/actions/workflows/build_test.yml/badge.svg?branch=main)
+![Build & Test (Core)](https://github.com/spacecomputer-io/seedselection/actions/workflows/build_test.yml/badge.svg?branch=main)
 
 ## Overview
 
@@ -23,7 +23,7 @@ To use this crate, add it to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-seedselection = { git = "https://github.com/spacecomputerio/seedselection.git", tag = "v0.1.0" }
+seedselection = { git = "https://github.com/spacecomputer-io/seedselection.git", tag = "v0.1.0" }
 ```
 
 Then, you can use it in your code:
@@ -44,7 +44,7 @@ let selected = xor_dist::xor_distance_selection(name, seed, seq, n, &ids, Sha256
 println!("Selected peers: {:?}", selected);
 ```
 
-**NOTE:** There is an equivalent Go implementation: [spacecomputerio/seedselection-go](https://github.com/spacecomputerio/seedselection-go).
+**NOTE:** There is an equivalent Go implementation: [spacecomputer-io/seedselection-go](https://github.com/spacecomputer-io/seedselection-go).
 
 ## License
 

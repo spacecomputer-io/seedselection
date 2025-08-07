@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 description = "A crate for deterministic selection approaches in distributed systems."
 license = "MIT"
-repository = "https://github.com/spacecomputerio/seedselection"
+repository = "https://github.com/spacecomputer-io/seedselection"
 
 [dependencies]
 sha2 = "0.10"
