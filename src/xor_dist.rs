@@ -29,6 +29,8 @@ impl Ord for HeapEntry {
 
 /// Implement PartialOrd for HeapEntry to allow comparisons between entries based on their distance.
 /// It does not need to reverse the comparison since Ord already does that.
+/// Clippy warning is suppressed because this is intentional for use with BinaryHeap.
+#[allow(clippy::non_canonical_partial_ord_impl)]
 impl PartialOrd for HeapEntry {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.distance.cmp(&other.distance))
@@ -117,16 +119,14 @@ where
 
         if max_heap.len() < n {
             max_heap.push(entry);
-        } else {
+        } else if let Some(top_entry) = max_heap.peek()
+            && entry.distance < top_entry.distance
+        {
             // Check if the current entry's distance is smaller than the largest distance
             // currently in the heap (which is the root of the max-heap).
             // If it is, we pop the largest (furthest) entry and push the new one.
-            if let Some(top_entry) = max_heap.peek() {
-                if entry.distance < top_entry.distance {
-                    max_heap.pop();
-                    max_heap.push(entry);
-                }
-            }
+            max_heap.pop();
+            max_heap.push(entry);
         }
     }
 
