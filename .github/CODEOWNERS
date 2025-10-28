@@ -1,0 +1,10 @@
+* @amirylm @rezabfil-sec
+
+## Code
+
+## Infrastructure
+
+.github/workflows/ @spacecomputer-io/infra
+Makefile @spacecomputer-io/infra
+Cargo.toml @spacecomputer-io/infra
+Cargo.lock @spacecomputer-io/infra
